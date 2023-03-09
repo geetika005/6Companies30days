@@ -1,0 +1,79 @@
+//{ Driver Code Starts
+//Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+class Solution {
+public:
+    int maxCoins(vector<int>&A,int n)
+    {
+	    //Write your code here
+	 vector<vector<int>>dp(n+1,vector<int>(n+1,0));
+	    return solve(A,n,0,0,n-1,dp);
+
+    }
+    int solve(vector<int>&A ,int n,int i,int f,int s,vector<vector<int>>&dp){
+        if(n==0)
+        return 0;
+        if(n==1&&i%2==0)
+        return A[f];
+        if(n==1&&i%2!=0)
+        return 0;
+         if(f>s)
+            return 0;
+            if(dp[f][s]!=0)
+            return dp[f][s];
+        if(i%2==0)
+        {
+           if(f==s-1)
+           {if(A[f]>A[s])
+           return A[f]+solve(A,n--,i+1,f+1,s,dp);
+           else
+           return A[s]+solve(A,n--,i+1,f,s-1,dp);
+           }
+          int first,second;
+     
+          first=A[f]+solve(A,n--,i+1,f+1,s,dp);
+       
+          second=A[s]+solve(A,n--,i+1,f,s-1,dp);
+          return dp[f][s]=max(first,second);
+          
+        }
+        else{
+            if(f==s-1)
+           {if(A[f]>A[s])
+           return solve(A,n--,i+1,f+1,s,dp);
+           else
+           return solve(A,n--,i+1,f,s-1,dp);
+           }
+           int first,second;
+     
+          first=solve(A,n--,i+1,f+1,s,dp);
+       
+          second=solve(A,n--,i+1,f,s-1,dp);
+          return dp[f][s]=min(first,second);
+        } 
+        
+    }
+};
+
+//{ Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        cin >> N;
+        vector<int>A(N);
+        for (int i = 0; i < N; i++) {
+            cin >> A[i];
+        }
+        Solution ob;
+        cout << ob.maxCoins(A, N) << "\n";
+    }
+    return 0;
+}
+
+// } Driver Code Ends
