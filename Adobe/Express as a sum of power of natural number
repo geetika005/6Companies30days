@@ -1,0 +1,58 @@
+//{ Driver Code Starts
+// Initial Template for C++
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+//User function Template for C++
+class Solution{
+    public: 
+    #define mod 1000000007
+    int power(int n,int x,int m){
+        n=n%m;
+        int res=1;
+        while(x>0){
+        if(x&1)
+        res=(res*n)%m;
+        x=x>>1;
+        n=(n*n)%m;}
+        return res%m;
+    }
+    int numOfWays(int n, int x)
+    {
+        // code here
+        vector<vector<int>> dp(1001,vector<int>(1001,0));
+        return solve(n,x,1,dp,n);
+    }
+    int solve(int n,int x,int i,vector<vector<int>>&dp,int temp){
+        if(n==0)
+        return 1;
+        if(power(i,x,mod)>n)
+        return 0;
+        if(dp[n][i]!=0){ //cout<<n<<" ";
+        return dp[n][i];}
+        int take,notake;
+        
+     take=solve(n-power(i,x,mod),x,i+1,dp,temp);
+     notake=solve(n,x,i+1,dp,temp);
+    
+     return dp[n][i]=(take+notake)%mod;
+    }
+};
+
+//{ Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int  n, x;
+        cin >> n >> x;
+        Solution ob;
+        cout<<ob.numOfWays(n, x)<<endl;
+    }
+    return 0;
+}
+
+// } Driver Code Ends
