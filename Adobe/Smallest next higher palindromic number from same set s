@@ -1,0 +1,67 @@
+//{ Driver Code Starts
+//Initial template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+//User function template for C++
+
+class Solution{
+  public:
+    string nextPalin(string str) { 
+        //complete the function here
+        int k;
+        int n=str.size();
+      
+        k=n/2;
+       
+     k--;
+        for(int i=k;i>=0;i--){
+            
+            if(i!=0&&((str[i]-'0')>(str[i-1]-'0'))){
+          
+           
+            
+             sort(str.begin()+i,str.begin()+k+1);
+             int small=k; 
+            for(int j=k;j>=i;j--){
+                if((str[j]-'0')>(str[i-1]-'0')&&(str[j]-'0')<=(str[small]-'0'))
+                small=j;
+            }
+           // cout<<small;
+              char temp=str[small];
+            str[small]=str[i-1];
+            str[i-1]=temp;
+             if(n%2==0)
+            sort(str.begin()+k+1,str.begin()+n-i,greater<int>());
+            else
+             sort(str.begin()+k+2,str.begin()+n-i,greater<int>());
+            temp=str[n-1-small];
+            str[n-small-1]=str[n-i];
+            str[n-i]=temp;
+           
+           
+            return str;
+            }
+        }
+        return "-1";
+    }
+};
+
+//{ Driver Code Starts.
+
+int main() {
+
+    int t;
+    cin >> t;
+    while(t--){
+        string s;
+        cin >> s;
+        Solution obj;
+        cout << obj.nextPalin(s) << endl;
+    }
+    return 0;
+}
+// } Driver Code Ends
