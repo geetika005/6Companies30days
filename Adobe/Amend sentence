@@ -1,0 +1,21 @@
+    string amendSentence (string s)
+    {
+        // your code here
+        string ans="";
+        string st;
+        ans+=tolower(s[0]); int i;
+        for( i=1;i<s.size();i++){
+            if(islower(s[i]))
+            ans+=s[i];
+            else break;
+        }
+        for(int j=i;j<s.size();j++){
+        if(isupper(s[j])){
+            ans+=" ";
+            ans+=tolower(s[j]);}
+            else{ans+=s[j];}
+       
+        }
+        
+        return ans;
+    }
