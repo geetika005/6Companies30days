@@ -99,7 +99,7 @@
 :white_check_mark: 9. Smallest palindromic number greater than N using the same set of digits as in N.<a href="https://practice.geeksforgeeks.org/problems/next-higher-palindromic-number-using-the-same-set-of-digits5859/1/">Link</a>
 :white_check_mark: 10.Elections<a href="https://practice.geeksforgeeks.org/problems/winner-of-an-election-where-votes-are-represented-as-candidate-names-1587115621/1/">Link</a>
 :white_check_mark: 11.String Amendment<a href="https://practice.geeksforgeeks.org/problems/amend-the-sentence3235/1">Link</a>
-:white_check_mark: 12.Leaders in Array<a href="https://practice.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1/">Link</a>
-:white_check_mark: 13.Minimum operations to convert array A to B <a href="https://practice.geeksforgeeks.org/problems/minimum-insertions-to-make-two-arrays-equal/1/">Link</a>
-:white_check_mark: 14.Smallest range in K lists <a href="https://practice.geeksforgeeks.org/problems/find-smallest-range-containing-elements-from-k-lists/1/">Link</a>
-:white_check_mark: 15.Given two library versions of an executable: for example, “10.1.1.3” and “10.1.1.9” or “10” and “10.1”. Find out which one is more recent? Strings can be empty also.<a href="https://www.geeksforgeeks.org/adobe-interview-experience-for-mts-1-1-5-years-experienced/">Link</a>
+:white_check_mark: 12.Leaders in Array<a href="https://practice.geeksforgeeks.org/problems/leaders-in-an-array-1587115620/1/">Link</a>  
+:white_check_mark: 13.Minimum operations to convert array A to B <a href="https://practice.geeksforgeeks.org/problems/minimum-insertions-to-make-two-arrays-equal/1/">Link</a>  
+:white_check_mark: 14.Smallest range in K lists <a href="https://practice.geeksforgeeks.org/problems/find-smallest-range-containing-elements-from-k-lists/1/">Link</a>  
+:white_check_mark: 15.Given two library versions of an executable: for example, “10.1.1.3” and “10.1.1.9” or “10” and “10.1”. Find out which one is more recent? Strings can be empty also.<a href="https://www.geeksforgeeks.org/adobe-interview-experience-for-mts-1-1-5-years-experienced/">Link</a>  
